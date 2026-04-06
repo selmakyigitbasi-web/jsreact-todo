@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #bee5f6; /* Senin seçtiğin mavi tonu */
+  color: #e0e0e0;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Mobilde çok yukarı yapışmaması için */
+  padding: 40px 20px;
+}
+
+.app-container {
+  background: #1e1e1e;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 450px; /* Geniş ekranlarda çok yayılmasın */
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #489be9;
+}
+
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+input[type="text"] {
+  flex: 2;
+  background: #2c2c2c;
+  border: 2px solid #333;
+  border-radius: 8px;
+  padding: 12px;
+  color: white;
+  font-size: 16px; /* Mobilde zoom yapmasını engeller */
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #4872f9;
+}
+
+.add-btn {
+  flex: 1;
+  background-color: #4872f9;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #033ade;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #252525;
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  border: 1px solid #333;
+}
+
+.todo-text {
+  flex: 1;
+  margin: 0 15px;
+  font-size: 1rem;
+  line-height: 1.4;
+  word-break: break-word; /* Uzun metinleri alt satıra atar */
+}
+
+/* 5. Butonlar ve Kontroller */
+input[type="checkbox"] {
+  accent-color: #4872f9;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0; /* Küçülmesini engeller */
+}
+
+.delete-btn {
+  background: #ff4d4d; /* Daha dikkat çekici bir kırmızı */
+  color: white;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 15px; /* Mobilde dış boşluğu azalttık */
+  }
+
+  .app-container {
+    padding: 1.2rem;
+    border-radius: 12px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .input-group {
+    flex-direction: column; /* Input ve Buton alt alta */
+  }
+
+  input[type="text"] {
+    width: 100%;
+  }
+
+  .add-btn {
+    width: 100%;
+    padding: 15px; /* Parmakla basmak daha kolay olsun */
+  }
+
+  li {
+    padding: 10px;
+  }
+
+  .todo-text {
+    font-size: 0.95rem;
+    margin: 0 10px;
+  }
+}
